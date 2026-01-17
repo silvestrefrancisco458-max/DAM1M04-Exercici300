@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string" },
+      "composer": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "period": { "type": "string" }
+        },
+        "required": ["name", "period"]
+      },
+      "librettist": { "type": "string" },
+      "premiere": {
+        "type": "object",
+        "properties": {
+          "city": { "type": "string" },
+          "venue": { "type": "string" },
+          "date": { "type": "string", "format": "date" }
+        },
+        "required": ["city", "venue", "date"]
+      },
+      "language": { "type": "string" },
+      "duration_min": { "type": "number" },
+      "act_count": { "type": "number" },
+      "notable_arias": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "lead_roles": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "character": { "type": "string" },
+            "voice_type": { "type": "string" }
+          },
+          "required": ["character", "voice_type"]
+        }
+      },
+      "themes": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "required": [
+      "title", "composer", "librettist", "premiere",
+      "language", "duration_min", "act_count",
+      "notable_arias", "lead_roles", "themes"
+    ]
+  }
+}

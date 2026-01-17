@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "event": { "type": "string" },
+      "sport": { "type": "string" },
+      "category": { "type": "string" },
+      "record": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "number" },
+          "unit": { "type": "string" },
+          "display": { "type": "string" },
+          "set_on": { "type": "string", "format": "date" }
+        },
+        "required": ["value", "unit", "display", "set_on"]
+      },
+      "athlete": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "country": { "type": "string" }
+        },
+        "required": ["name", "country"]
+      },
+      "games": {
+        "type": "object",
+        "properties": {
+          "year": { "type": "number" },
+          "host_city": { "type": "string" },
+          "season": { "type": "string" }
+        },
+        "required": ["year", "host_city", "season"]
+      },
+      "venue": { "type": "string" },
+      "status": { "type": "string" },
+      "wind": { "type": "number" },
+      "notes": { "type": "string" }
+    },
+    "required": [
+      "event", "sport", "category",
+      "record", "athlete", "games",
+      "venue", "status", "wind", "notes"
+    ]
+  }
+}

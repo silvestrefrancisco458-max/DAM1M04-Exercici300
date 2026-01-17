@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "title": { "type": "string" },
+      "release_year": { "type": "number" },
+      "release_date": { "type": "string", "format": "date" },
+      "director": { "type": "string" },
+      "runtime_min": { "type": "number" },
+      "genres": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "countries": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "languages": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "box_office_usd": { "type": "number" },
+      "cast": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "actor": { "type": "string" },
+            "role": { "type": "string" }
+          },
+          "required": ["actor", "role"]
+        }
+      },
+      "soundtrack_by": { "type": "string" },
+      "awards": {
+        "type": "object",
+        "properties": {
+          "oscars": { "type": "number" },
+          "bafta": { "type": "number" }
+        },
+        "required": ["oscars", "bafta"]
+      },
+      "ratings": {
+        "type": "object",
+        "properties": {
+          "imdb": { "type": "number" },
+          "metacritic": { "type": "number" }
+        },
+        "required": ["imdb", "metacritic"]
+      }
+    },
+    "required": [
+      "title", "release_year", "release_date", "director",
+      "runtime_min", "genres", "countries", "languages",
+      "box_office_usd", "cast", "soundtrack_by",
+      "awards", "ratings"
+    ]
+  }
+}
