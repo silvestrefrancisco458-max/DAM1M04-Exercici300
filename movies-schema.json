@@ -1,26 +1,17 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "array",
   "items": {
     "type": "object",
     "properties": {
       "title": { "type": "string" },
-      "release_year": { "type": "number" },
+      "release_year": { "type": "integer" },
       "release_date": { "type": "string", "format": "date" },
       "director": { "type": "string" },
-      "runtime_min": { "type": "number" },
-      "genres": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
-      "countries": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
-      "languages": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
+      "runtime_min": { "type": "integer" },
+      "genres": { "type": "array", "items": { "type": "string" } },
+      "countries": { "type": "array", "items": { "type": "string" } },
+      "languages": { "type": "array", "items": { "type": "string" } },
       "box_office_usd": { "type": "number" },
       "cast": {
         "type": "array",
@@ -37,8 +28,8 @@
       "awards": {
         "type": "object",
         "properties": {
-          "oscars": { "type": "number" },
-          "bafta": { "type": "number" }
+          "oscars": { "type": "integer" },
+          "bafta": { "type": "integer" }
         },
         "required": ["oscars", "bafta"]
       },
@@ -52,10 +43,19 @@
       }
     },
     "required": [
-      "title", "release_year", "release_date", "director",
-      "runtime_min", "genres", "countries", "languages",
-      "box_office_usd", "cast", "soundtrack_by",
-      "awards", "ratings"
+      "title",
+      "release_year",
+      "release_date",
+      "director",
+      "runtime_min",
+      "genres",
+      "countries",
+      "languages",
+      "box_office_usd",
+      "cast",
+      "soundtrack_by",
+      "awards",
+      "ratings"
     ]
   }
 }

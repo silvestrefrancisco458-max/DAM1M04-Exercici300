@@ -1,23 +1,25 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "array",
   "items": {
     "type": "object",
     "properties": {
       "id": { "type": "string" },
       "name": { "type": "string" },
-      "age": { "type": "number" },
+      "age": { "type": "integer" },
       "loyalty_level": { "type": "string" },
       "active": { "type": "boolean" },
       "joined": { "type": "string", "format": "date" },
+
       "contact": {
         "type": "object",
         "properties": {
-          "email": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
           "phone": { "type": "string" }
         },
         "required": ["email", "phone"]
       },
+
       "address": {
         "type": "object",
         "properties": {
@@ -27,6 +29,7 @@
         },
         "required": ["city", "country", "postal_code"]
       },
+
       "preferred_store": {
         "type": "object",
         "properties": {
@@ -35,6 +38,7 @@
         },
         "required": ["brand", "location"]
       },
+
       "purchases": {
         "type": "array",
         "items": {
@@ -49,7 +53,7 @@
                 "properties": {
                   "product": { "type": "string" },
                   "category": { "type": "string" },
-                  "quantity": { "type": "number" },
+                  "quantity": { "type": "integer" },
                   "price": { "type": "number" }
                 },
                 "required": ["product", "category", "quantity", "price"]
@@ -59,12 +63,22 @@
           "required": ["date", "store", "basket"]
         }
       },
+
       "lifetime_spend": { "type": "number" }
     },
+
     "required": [
-      "id", "name", "age", "loyalty_level", "active",
-      "joined", "contact", "address", "preferred_store",
-      "purchases", "lifetime_spend"
+      "id",
+      "name",
+      "age",
+      "loyalty_level",
+      "active",
+      "joined",
+      "contact",
+      "address",
+      "preferred_store",
+      "purchases",
+      "lifetime_spend"
     ]
   }
 }

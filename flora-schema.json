@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "array",
   "items": {
     "type": "object",
@@ -10,14 +10,8 @@
       "native_range": {
         "type": "object",
         "properties": {
-          "countries": {
-            "type": "array",
-            "items": { "type": "string" }
-          },
-          "biomes": {
-            "type": "array",
-            "items": { "type": "string" }
-          }
+          "countries": { "type": "array", "items": { "type": "string" } },
+          "biomes": { "type": "array", "items": { "type": "string" } }
         },
         "required": ["countries", "biomes"]
       },
@@ -28,26 +22,22 @@
         "type": "object",
         "properties": {
           "leaf_type": { "type": "string" },
-          "notable_features": {
-            "type": "array",
-            "items": { "type": "string" }
-          }
+          "notable_features": { "type": "array", "items": { "type": "string" } }
         },
         "required": ["leaf_type", "notable_features"]
       },
-      "ecological_role": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
-      "human_uses": {
-        "type": "array",
-        "items": { "type": "string" }
-      }
+      "ecological_role": { "type": "array", "items": { "type": "string" } },
+      "human_uses": { "type": "array", "items": { "type": "string" } }
     },
     "required": [
-      "common_name", "scientific_name", "continent",
-      "native_range", "plant_type", "average_height_m",
-      "conservation_status", "traits"
+      "common_name",
+      "scientific_name",
+      "continent",
+      "native_range",
+      "plant_type",
+      "average_height_m",
+      "conservation_status",
+      "traits"
     ]
   }
 }

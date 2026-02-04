@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "array",
   "items": {
     "type": "object",
@@ -24,12 +24,9 @@
         "required": ["city", "venue", "date"]
       },
       "language": { "type": "string" },
-      "duration_min": { "type": "number" },
-      "act_count": { "type": "number" },
-      "notable_arias": {
-        "type": "array",
-        "items": { "type": "string" }
-      },
+      "duration_min": { "type": "integer" },
+      "act_count": { "type": "integer" },
+      "notable_arias": { "type": "array", "items": { "type": "string" } },
       "lead_roles": {
         "type": "array",
         "items": {
@@ -41,15 +38,19 @@
           "required": ["character", "voice_type"]
         }
       },
-      "themes": {
-        "type": "array",
-        "items": { "type": "string" }
-      }
+      "themes": { "type": "array", "items": { "type": "string" } }
     },
     "required": [
-      "title", "composer", "librettist", "premiere",
-      "language", "duration_min", "act_count",
-      "notable_arias", "lead_roles", "themes"
+      "title",
+      "composer",
+      "librettist",
+      "premiere",
+      "language",
+      "duration_min",
+      "act_count",
+      "notable_arias",
+      "lead_roles",
+      "themes"
     ]
   }
 }
